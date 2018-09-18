@@ -401,7 +401,7 @@ client.on('message', message => {
 });
 client.on('message', msg => {
   if (msg.content === '!invite') {
-    msg.reply('link');
+    msg.reply('https://discordapp.com/api/oauth2/authorize?client_id=491530908180938762&permissions=8&scope=bothttps://discordapp.com/api/oauth2/authorize?client_id=491530908180938762&permissions=8&scope=bot');
   }
 });
     if(message.content.startsWith(prefix + 'role')) {
@@ -589,7 +589,12 @@ client.on("message", message => {
     }
    
   });
-
+});
+client.on('message', msg => {
+  if (msg.content === '!suppport') {
+    msg.reply('السيرفر للمساعده,https://discord.gg/3KyjRr');
+  }
+});
 
  
  client.login(process.env.BOT_TOKEN);
