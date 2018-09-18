@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 client.on('ready', () => {  
-client.user.setGame(`help |$invite |$support$`,'https://www.twitch.tv/fofodiscord');                                                                                                                                                                                                                                                                                                                                                                                                                            
+client.user.setGame(`!help |!invite |!support$`,'https://www.twitch.tv/fofodiscord');                                                                                                                                                                                                                                                                                                                                                                                                                            
   console.log('---------------');
   console.log(' Bot Is Online')
   console.log('---------------')
@@ -317,64 +317,7 @@ client.on('message', msg => {
   if (msg.content === '!invite') {
     msg.reply('https://discordapp.com/api/oauth2/authorize?client_id=491530908180938762&permissions=8&scope=bothttps://discordapp.com/api/oauth2/authorize?client_id=491530908180938762&permissions=8&scope=bot');
   }
-});
-    if(message.content.startsWith(prefix + 'role')) {
-        let member = message.mentions.users.first();
-        let role = args.join(' ').replace(member, '').replace(args[0], '').replace(' ', '');
-        console.log(role);
-        if(member) {
-              if(role.startsWith('-')) {
-                let roleRe = args.join(' ').replace(member, '').replace(args[0], '').replace('-', '').replace(' ', '');
-                console.log(roleRe);
-                let role1 = message.guild.roles.find('name', roleRe);
-                console.log(`hi`);
-                if(!role1) return message.reply(`الرتبة غير موجودة بالسيرفر تأكد من الاسم`);
-                message.guild.member(member).removeRole(role1.id);
-            } else if(!role.startsWith('-')) {
-                let roleRe = args.join(' ').replace(member, '').replace(args[0], '').replace('-', '').replace(' ', '');
-                let role1 = message.guild.roles.find('name', roleRe);
-                if(!role1) return message.reply(`الرتبة غير موجودة بالسيرفر تأكد من الاسم`);
-                message.guild.member(member).addRole(role1);
-            } else {
-                message.reply(`يجب عليك كتابة اسم الرتبة`);
-            } 
-        }
- else if(args[0] == 'all') {
-    if(role) {
-    let role1 = message.guild.roles.find('name', role);
-    if(!role1) return message.reply(`الرتبة غير موجودة بالسيرفر تأكد من الاسم`);
-    message.channel.send(`الرجاء الانتظار حتى يتم الانتهاء من الامر`).then(msg => {
-        message.guild.members.forEach(m => {
-            message.guild.member(m).addRole(role1);
-        });
-        msg.edit(`تم الانتهاء من الامر ${message.guild.members.size}`);
-    });
-}
-} else if(args[0] == 'humans') {
-    if(role) {
-        let role1 = message.guild.roles.find('name', role);
-        if(!role1) return message.reply(`الرتبة غير موجودة بالسيرفر تأكد من الاسم`);
-        message.channel.send(`الرجاء الانتظار حتى يتم الانتهاء من الامر`).then(msg => {
-            message.guild.members.filter(m =>m.user.bot == false).forEach(m => {
-                message.guild.member(m).addRole(role1);
-            });
-            msg.edit(`تم الانتهاء من الامر ${message.guild.members.size}`);
-        });
-    }
-} else if(args[0] == 'bots') {
-    if(role) {
-        let role1 = message.guild.roles.find('name', role);
-        if(!role1) return message.reply(`الرتبة غير موجودة بالسيرفر تأكد من الاسم`);
-        message.channel.send(`الرجاء الانتظار حتى يتم الانتهاء من الامر`).then(msg => {
-            message.guild.members.filter(m =>m.user.bot == true).forEach(m => {
-                message.guild.member(m).addRole(role1);
-            });
-msg.edit(`تم الانتهاء من الامر ${message.guild.members.size}`);
-});
-}
-}
-}
-});
+
 client.on('message', message => {
            if (message.content.startsWith("rid")) {
      var args = message.content.split(" ").slice(1);
