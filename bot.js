@@ -31,7 +31,7 @@ client.on('message', message => {
 
 
 client.on('ready', () => {                           
-client.user.setGame(`!help |!invite |!support`,'https://www.twitch.tv/fofodiscord');                                                                                                                                                                                                                                                                                                                                                                                                                            
+client.user.setGame(`$help |$invite |$support`,'https://www.twitch.tv/fofodiscord');                                                                                                                                                                                                                                                                                                                                                                                                                            
 
 if (!message.content.startsWith(prefix)) return;
 	let command = message.content.split(" ")[0];
@@ -207,20 +207,10 @@ m.sendFile(message.attachments.first().url).catch();
     }
     })    ;
     }
-});
-client.on('message', message => {
-    if(message.channel.type === "dm") return;
-       if (message.content === prefix + "bot") {
-       let embed = new Discord.RichEmbed()
-    .setColor("RANDOM")
-    .addField("Servers:globe_with_meridians:" , client.guilds.size)
-    .addField("Users:busts_in_silhouette:" , client.users.size)
-    .addField("Channels:books:" , client.channels.size)
-    message.channel.sendEmbed(embed);
-      }
+
   });
 client.on('message', message => {
-     if (message.content === "-help") {
+     if (message.content === "!help") {
 message.author.send("***UrBotName***" + `  **
 ∞⋅∾◅▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▻∾⋅∞
 📝 | الاوامر العامة | 📝
