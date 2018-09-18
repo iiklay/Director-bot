@@ -32,17 +32,6 @@ client.on('message', message => {
 
 client.on('ready', () => {                           
 client.user.setGame(`!help |!invite |!support`,'https://www.twitch.tv/fofodiscord');                                                                                                                                                                                                                                                                                                                                                                                                                            
-});
-client.on("message", message => {
- if (message.content === "=support") {
-  const embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setFooter('© Director جميع الحقوق محفوظة 2018 لــبوت')
-      .addField('سيرفر الدعم الفني', `https://discord.gg/CXE42RP`)
-  message.author.send({embed});
-      message.channel.send(":white_check_mark: | Check Your DM تم الأرسال بلخاص")
- }
-});
 
 if (!message.content.startsWith(prefix)) return;
 	let command = message.content.split(" ")[0];
