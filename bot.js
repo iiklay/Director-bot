@@ -1,17 +1,24 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
 const client = new Discord.Client();
-const convert = require("hh-mm-ss")
-const dateFormat = require('dateformat');
-const fs = require('fs');
-const pretty = require('pretty-ms');
-const rn = require('random-number');
-const userData = JSON.parse(fs.readFileSync('./userData.json', 'utf8'));
-const moment = require('moment');
-var Canvas = require('canvas')
-var jimp = require('jimp')
-const prefix = "!";
-let done = {};
+client.on('ready', () => {  
+client.user.setGame(`help |$invite |$support$`,'https://www.twitch.tv/fofodiscord');                                                                                                                                                                                                                                                                                                                                                                                                                            
+  console.log('---------------');
+  console.log(' Bot Is Online')
+  console.log('---------------')
+});
+client.on('message', message => {
+     if (message.content === ".servers") {
+     let embed = new Discord.RichEmbed()
+  .setColor("#0000FF")
+  .addField("**Server: **" , client.guilds.size)
+  message.channel.sendEmbed(embed);
+    }
 
+client.on('message', msg => {
+  if (msg.content === 'ping') {
+    msg.reply('Pong!');
+  }
+});
 
 
 
